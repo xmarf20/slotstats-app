@@ -3,7 +3,7 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 import { map } from 'rxjs/operators'
 
 export interface Slot {
-  id?: string;
+  id?: number;
   name: string;
   maxWin: number;
   maxMultiplier: number;
@@ -20,8 +20,7 @@ export class SlotsService {
   constructor(private firestore: AngularFirestore) {
     this.slotCollection = this.firestore.collection('slots');
     this.slots = this.slotCollection.snapshotChanges().pipe(
-      // @ts-ignore
-      map(actions => actions.map((a: { payload: { doc: { data: () => any; }; }; }) => a.payload.doc.data()))
+      map((actions :any) => actions.map((a: { payload: { doc: { data: () => any; }; }; }) => a.payload.doc.data()))
     )
   }
 

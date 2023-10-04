@@ -1,17 +1,20 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {BonusHuntModule} from "./bonus-hunt/bonus-hunt.module";
-import {SlotsListModule} from "./slots-list/slots-list.module";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { BonusHuntComponent } from './pages/bonus-hunt/bonus-hunt.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
-    path: 'slots',
-    loadChildren: () => SlotsListModule
+    path: '',
+    loadChildren: () => DashboardComponent
   }, {
     path: 'bonus-hunt',
-    loadChildren: () => BonusHuntModule
-  },
-  {path: '**', redirectTo: '/', pathMatch: 'full'}
+    loadChildren: () => BonusHuntComponent
+  }, {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
@@ -19,6 +22,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-
-
 }
