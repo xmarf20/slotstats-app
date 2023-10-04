@@ -1,0 +1,2 @@
+# slotstats-app
+Angular App
