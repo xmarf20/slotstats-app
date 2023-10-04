@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+@import 'theme';
+@import 'app/slots-list/slots-list.component';
+@import 'variables.scss';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: $color-darkest-grey
+}
+
+.widget-container {
+  position: relative;
+  margin: 20px;
+  max-width: 800px;
+  background: #32787D;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+
+  .mat-table {
+    width: 100%;
+    background-color: $color-dark-teal;
+    box-shadow: none;
+
+    .mat-sort-header, .mat-cell {
+      padding-left:0;
+    }
+
+    .mat-column-trash {
+
+      .mat-icon {
+        font-size: 2em;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    th{
+      font-size: 18px;
+    }
+  }
+
+  .table {
+    text-align: right;
+    color: white;
+  }
+
+  .add-form {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 2;
+    color: white;
+    &-row {
+
+    }
+  }
+
+  button {
+    color: white;
+    background-color: #444444;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .widget-container{
+    width: 100%;
+    border-radius: .4rem;
+    margin: 20px 0;
+  }
+}
