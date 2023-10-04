@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "slotstats-edfa9": {
+      "hosting": {
+        "slotstats": [
+          "slotstats-edfa9"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "slotstats-edfa9"
+  }
+}

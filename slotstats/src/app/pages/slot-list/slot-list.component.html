@@ -1,0 +1,44 @@
+<h1 class="text-2xl font-bold text-white mb-4">Slot Liste</h1>
+
+<div class="mat-elevation-z8">
+    <mat-form-field class="w-full !bg-slate-600 !text-white">
+        <mat-label>Suche</mat-label>
+        <input matInput type="text" (keyup)="applyFilter($event)"/>
+    </mat-form-field>
+    
+    <mat-table [dataSource]="dataSource" matSort>
+        <!-- name Column -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Slot</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.name }} </mat-cell>
+        </ng-container>
+
+         <!-- name Column -->
+         <ng-container matColumnDef="bet">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Einsatz</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.bet | currency:'EUR':'symbol':'1.2-2' }} </mat-cell>
+        </ng-container>
+    
+        <!-- maxWin Column -->
+        <ng-container matColumnDef="maxWin">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Max Win</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.maxWin | currency:'EUR':'symbol':'1.2-2' }} </mat-cell>
+        </ng-container>
+    
+        <!-- maxMultiplier Column -->
+        <ng-container matColumnDef="maxMultiplier">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Multiplier</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.maxMultiplier | number: '1.0-0' }}x </mat-cell>
+        </ng-container>
+        <!-- maxMultiplier Column -->
+        <ng-container matColumnDef="delete">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let row"> <button (click)="deleteEntry(row.id)">X</button> </mat-cell>
+        </ng-container>
+    
+        <mat-header-row class="!bg-slate-600 !text-white !text-xl" *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row class="!bg-slate-600 !text-white !text-lg" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    
+    </mat-table>
+    <mat-paginator class="!bg-slate-600 !text-white" [pageSizeOptions]="[10, 25, 100]" showFirstLastButtons></mat-paginator>
+</div>

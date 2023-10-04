@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mdc-text-field--filled {
+    @apply bg-slate-600 text-white;
+}
+
+.mat-column-maxMultiplier,
+.mat-column-maxWin,
+.mat-column-bet {
+    @apply max-w-[120px];
+}
+
+.mat-column-delete {
+    @apply max-w-[60px];
+}
