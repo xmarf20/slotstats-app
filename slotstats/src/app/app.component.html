@@ -1,9 +1,11 @@
 <section class="h-full w-full overflow-hidden flex">
-  <div class="px-2 py-6 w-[200px] h-full text-white bg-slate-600">
-    <a class="block px-2 py-1 w-full hover:bg-slate-100 hover:text-gray-dark" [routerLink]="['/slot-list']">Slot List</a>
-    <a class="block px-2 py-1 w-full hover:bg-slate-100 hover:text-gray-dark" [routerLink]="['/bonus-hunt']">Bonus Hunt</a>
+  <div class="py-6 w-[200px] h-full text-white bg-neutral-700 xs:hidden">
+    <a class="px-4 py-2 w-full hover:bg-slate-100 hover:text-gray-dark flex justify-between items-center"
+      [routerLink]="['/slot-list']">Slots List <mat-icon fontIcon="list"></mat-icon></a>
+    <a class="px-4 py-2 w-full hover:bg-slate-100 hover:text-gray-dark flex justify-between items-center"
+      [routerLink]="['/bonus-hunt']">Bonus Hunt <mat-icon fontIcon="my_location"></mat-icon></a>
   </div>
-  <div class="h-full w-full px-4 py-6 overflow-y-auto bg-slate-800">
+  <div class="h-full w-full px-4 py-6 overflow-y-auto bg-neutral-800">
     <router-outlet></router-outlet>
   </div>
 </section>

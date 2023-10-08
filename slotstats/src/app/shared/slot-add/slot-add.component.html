@@ -1,0 +1,24 @@
+<div class="flex justify-between w-full">
+    <h3 class="text-lg font-bold text-white">Slot hinzufügen</h3>
+</div>
+<div class="pt-4">
+    <div [formGroup]="formData">
+        <mat-form-field class="w-full mb-1">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="name" />
+        </mat-form-field>
+        <mat-form-field class="w-full mb-1">
+            <mat-label>Einsatz in €</mat-label>
+            <input matInput type="text" formControlName="bet" />
+        </mat-form-field>
+        <mat-form-field class="w-full mb-1">
+            <mat-label>Max Win in €</mat-label>
+            <input matInput type="text" formControlName="maxWin" />
+        </mat-form-field>
+    </div>
+</div>
+
+<div class="flex justify-end">
+    <button mat-button class="px-4 py-2.5" color="warn" (click)="dialogRef.close(false)">abbrechen</button>
+    <button mat-button class="ml-2 px-4 py-2.5" color="primary" [disabled]="formData.invalid" (click)="dialogRef.close(formData.value)">speichern</button>
+</div>

@@ -9,6 +9,7 @@ import { RouterLink } from '@angular/router';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './shared/material.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     PagesModule,
     SharedModule,
+    MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     RouterLink,
