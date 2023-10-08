@@ -37,7 +37,7 @@
         <!-- edit Column -->
         <ng-container matColumnDef="delete">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
-            <mat-cell *matCellDef="let row"> <button (click)="editSlot(row)"><mat-icon aria-hidden="false" fontIcon="edit"></mat-icon></button> </mat-cell>
+            <mat-cell *matCellDef="let row"> <button class="flex items-center" (click)="editSlot(row)"><mat-icon aria-hidden="false" fontIcon="edit"></mat-icon></button> </mat-cell>
         </ng-container>
     
         <mat-header-row class=" !text-xl" *matHeaderRowDef="displayedColumns"></mat-header-row>
